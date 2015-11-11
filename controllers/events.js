@@ -66,17 +66,17 @@ function checkIntRange(request, fieldName, minVal, maxVal, contextData){
  * Validates the form and adds the new event to
  * our global list of events.
  */
-function saveEvent(request, response){
+ function saveEvent(request, response){
   var contextData = {errors: []};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
     contextData.errors.push('Your title should be between 5 and 100 letters.');
   }
-  
+    
   if (validator.isLength(request.body.location, 5, 50) ==false) {
     contextData.errors.push('Your location should be between 5 and 100 letters.');
   }
-}
+
 var year = checkIntRange(request, 'year',2015,2016,contextData);
 var month = checkIntRange(request, 'month',0,11,contextData);
 var day = checkIntRange(request, 'day',1,31,contextData);
@@ -153,3 +153,4 @@ module.exports = {
   'rsvp': rsvp,
   'api': api
 };
+ 
