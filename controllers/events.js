@@ -151,6 +151,11 @@ function rsvp (request, response){
 
 }
 
+function donation (request, response) {
+  var contextData = {};
+  response.render('donation.html', contextData);
+}
+
 
 /**
  * Export all our functions (controllers in this case, because they
@@ -162,5 +167,6 @@ module.exports = {
   'newEvent': newEvent,
   'saveEvent': saveEvent,
   'rsvp': rsvp,
-  'api': api
+  'api': api,
+  'donation':donation
 };
