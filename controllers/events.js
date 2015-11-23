@@ -103,7 +103,7 @@ if(request.body.image.match(/\.(png|gif)$/) === null) {
       id: events.all.length
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events/' + newEvent.id);
   }else{
     response.render('create-event.html', contextData);
   }
