@@ -7,11 +7,11 @@
       <p><strong>When: </strong><span id="date">{{event.date|prettyDate}}</span></p>
       <p><strong>Where: </strong><span id="location">{{event.location}}</span></p>
       <p><strong>Who: </strong></p>
-      <ol id = "attendees">
+      <ul id = "attendees">
         {% for person in event.attending %}
         <li>{{person}}</li>
         {% endfor %}
-      </ol>
+      </ul>
       <img id="image" src = "{{event.image}}">
     </li>
   <ul class="form-errors">
