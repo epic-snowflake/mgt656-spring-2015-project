@@ -3,8 +3,20 @@
 {% block mainContent %}
 
   <div>
-    <h2>Welcome to this aMaZiNg donation page</h2>
+    <h2>Donate to a generous cause</h2>
   </div>
+  <form class="form-inline">
+  <div class="form-group">
+    <label class="donation" for="exampleInputAmount">Amount (in dollars)</label>
+    <div class="input-group">
+      <div class="input-group-addon">$</div>
+      <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+      <div class="input-group-addon">.00</div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Transfer cash</button>
+</form>
+<div>
 
 
 {% endblock %}

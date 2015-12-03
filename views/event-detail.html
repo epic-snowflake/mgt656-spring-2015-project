@@ -2,20 +2,18 @@
 
 {% block mainContent %}
 
-<ul>
     <li class = "event" id="event-{{event.id}}">
-      <h1 id="title">{{event.title}}</h1>. 
-      <span id="date">{{event.date|prettyDate}}</span>
-      <span id="location">{{event.location}}</span>
-      
-      <ul id="attendees">{{event.attending}} </ul>
-       
+      <h1 id="title">{{event.title}}</h1> 
+      <p><strong>When: </strong><span id="date">{{event.date|prettyDate}}</span></p>
+      <p><strong>Where: </strong><span id="location">{{event.location}}</span></p>
+      <p><strong>Who: </strong></p>
+      <ol id = "attendees">
+        {% for person in event.attending %}
+        <li>{{person}}</li>
+        {% endfor %}
+      </ol>
       <img id="image" src = "{{event.image}}">
     </li>
-</ul>
-
-<p> <a class="donation" href="/donation">Click Here to Donate</a></p>
-<div>
   <ul class="form-errors">
     {% for error in errors %}
       <li>{{error}}</li>
@@ -23,7 +21,11 @@
   </ul>
 </div>
 <form method="POST">
-  <input type="text" name="email" id="email" placeholder="Your email"/>
-  <input type="submit" value="Submit"/>
+  <div class="col-xs-4">
+  <input type="text" class="form-control" name="email" id="email" placeholder="Your email"/>
+  </div>
+  <input class="btn btn-default" type="submit" value="Submit">
 </form>
+<p><a class="donation" href="/donation">Click Here to Donate</a></p>
+
 {% endblock %}
