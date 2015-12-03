@@ -10,3 +10,28 @@ a {
 .form-errors {
 	color: red;
 }
+
+.container {
+  margin: 0 auto;
+}
+
+.navbar-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.navbar-custom {
+    background-color: #002828;
+    border-color: #E7E7E7;
+    color: white;
+    padding: 10px 40px 10px 40px;
+}
+
+.navbar-custom a {
+    color: white;
+}
+
+.team-name {
+  text-align: center;
+  font-size: 30px;
+}

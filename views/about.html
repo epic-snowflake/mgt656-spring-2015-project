@@ -3,19 +3,48 @@
 {% block mainContent %}
 
 
-  <h1>This is the about us page</h1>
-  <p> our names will go here</p>
-  <span id="enchanting-hummingbird-name"> Paul Styslinger</span>
-<img src="paul photo.jpg" id="enchanting-hummingbird-headshot">
-
-  <span id="cautious-pig-name"> Amanda Roberts</span>
-  <img src="Amanda headshot.jpg"id="cautious-pig-headshot">
+<div class="container">
   
-  <span id="lively-wolf-name"> Alexandra Torresquintero</span>
-  <img src="alexandra photo.jpg" id="lively-wolf-headshot"> 
+ <h1>Meet Our Team</h1>
+ 
+   <div class="row">
+      
+    <div class="col-xs-6 col-md-3">
+    
+    <img src="paul photo.jpg" id="enchanting-hummingbird-headshot" class = "img-circle" height="180" width="180">
+      <div class="caption">
+        <h3> <span id="enchanting-hummingbird-name" class="team-name"> Paul Styslinger</span> </h3>
+        <p>More info here.</p>
+      </div>
+    </div>
+        
+    <div class="col-xs-6 col-md-3">
+    <img src="Amanda headshot.jpg"id="cautious-pig-headshot" class = "img-circle" height="180" width="180">
+      <div class="caption">
+        <h3>  <span id="cautious-pig-name" class="team-name"> Amanda Roberts</span> </h3>
+        <p>More info here.</p>
+      </div>
+    </div>
+    
+    <div class="col-xs-6 col-md-3">
+    <img src="alexandra photo.jpg" id="lively-wolf-headshot" class = "img-circle" height="180" width="180"> 
+      <div class="caption">
+        <h3> <span id="lively-wolf-name" class="team-name"> Alexandra Torresquintero</span> </h3>
+        <p>More info here.</p>
+      </div>
+    </div>
+    
+    <div class="col-xs-6 col-md-3">
+    <img src="VENKY HEADSHOT.jpg" id="curious-walrus-headshot" class = "img-circle" height="180" width="180">
+      <div class="caption">
+        <h3> <span id="curious-walrus-name" class="team-name"> Venkatesh Jindal</span> </h3>
+        <p>More info here.</p>
+      </div>
+    </div>
+    
+  </div>
+ 
+</div>
   
-  <span id="curious-walrus-name"> Venkatesh Jindal</span>
-  <img src="VENKY HEADSHOT.jpg" id="curious-walrus-headshot">
 
 {% endblock %}
-
