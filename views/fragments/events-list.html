@@ -1,9 +1,30 @@
 <ul>
   {% for event in events %}
     <li class = "event" id="event-{{event.id}}">
-      <a href="/events/{{event.id}}">{{event.title}}</a>. 
+      <a href="/events/{{event.id}}">{{event.title}}<span id="rsvp"> RSVP</span></span></a>. 
       <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
       {{event.attending.length}} attending so far.
     </li>
   {% endfor %}
 </ul>
+
+  <script src="//www.google-analytics.com/cx/api.js?experiment=60s2vjDaTn6ieKIdF0NZ6w"></script>
+
+  <script>
+    var pageVariations = [
+      function() {},  // Original: Do nothing. This will render the default HTML.
+      function() {    // Variation 1: remove RSVP text
+        $( '#rsvp' ).hide();
+      }
+    ];
+  
+  
+    $(document).ready(function(){
+      // Ask Google Analytics which variation to show the user.
+      var chosenVariation = cxApi.chooseVariation("60s2vjDaTn6ieKIdF0NZ6w");
+      
+      // Execute the chosen view
+      pageVariations[chosenVariation]();
+    });
+    
+  </script>
