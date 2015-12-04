@@ -7,8 +7,8 @@ var events = require('../models/events');
 function index (request, response) {
   var now = new Date();
   var contextData = {
-    'title': 'Epic Snowflake\'s Not-So-Epic Ticket Co.',
-    'tagline': 'Delivering tickets one sprint at a time.',
+    'title': 'Eventdull',
+    'tagline': 'A Blizzard of Unique (but Sometimes Boring) Activities.',
     'events': []
   };
   for(var i = 0; i < events.all.length; i++) {

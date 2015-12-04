@@ -35,3 +35,39 @@ a {
   text-align: center;
   font-size: 30px;
 }
+
+header {
+  padding: 20px;
+}
+
+.brand {
+  margin-top:-10px;
+}
+
+.footer-element {
+  padding: 0 20px;
+  font-size:14px;
+}
+
+h1 {
+  text-align:center;
+}
+
+.tagline {
+  font-style:italic;
+  text-align: center;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+#team-title {
+  font-style:italic;
+  padding:20px;
+}

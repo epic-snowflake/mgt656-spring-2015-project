@@ -23,13 +23,16 @@
 	  <div class="navbar-wrapper">
         <nav class="navbar navbar-custom navbar-fixed-top">
             <div class="navbar-header">
-              <a class="navbar-brand" href="#">Brand</a>
+              <a class="navbar-brand" href="/">
+                <img alt="Brand" class="brand" src="http://icons.iconarchive.com/icons/icons8/christmas-flat-color/512/snowflake-icon.png" height="40px" width="40px">
+              </a>
             </div>
         
             <!-- Collect the nav links, forms, and other content for toggling -->
               <ul class="nav navbar-nav">
                 <li><a href="about">Our Team</a></li>
-                <li class="active"><a href="/events">Events</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="#">Haaalp</a></li>
               </ul>
         </nav>
       </div>
@@ -40,13 +43,14 @@
     {% endblock %}
 
     {% block mainContent %}
-      <section>Welcome to {{ title }}. {{tagline}}</section>
+      <section>Welcome to {{ title }}: {{tagline}}</section>
     {% endblock %}
 
     {% block footer %}
       <footer>
-        <a href="/">Home</a>
-        <a href="/about">About Us</a>
+        <hr>
+        <a href="/" class="footer-element">Home</a>
+        <a href="/about" class="footer-element">About Us</a>
       </footer>
     {% endblock %}
 
