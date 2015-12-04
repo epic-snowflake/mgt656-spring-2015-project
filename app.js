@@ -12,8 +12,6 @@ var eventControllers = require('./controllers/events.js');
 
 // Create our express app
 var app = express();
-var favicon = require('serve-favicon');
-app.use(favicon(__dirname + '/public/favicon.ico'));
 
 // Configure it
 configure(app);
