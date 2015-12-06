@@ -1,12 +1,24 @@
-<ul>
-  {% for event in events %}
-    <li class = "event" id="event-{{event.id}}">
-      <a href="/events/{{event.id}}">{{event.title}}<span id="rsvp"> RSVP</span></span></a>. 
-      <time datetime="{{event.date}}">{{event.date|prettyDate}}</time>
-      {{event.attending.length}} attending so far.
-    </li>
-  {% endfor %}
-</ul>
+<div class="row">
+    {% for event in events %}
+      <li class = "event" id="event-{{event.id}}">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="{{event.image}}" style="height: 200px; overflow: hidden">
+            <div class="caption">
+              <h3>{{event.title}}</h3>
+              <p> <b>Date: </b><time datetime="{{event.date}}">{{event.date|prettyDate}}</time></p>
+              <p>{{event.attending.length}} attending so far.</p>
+              <div class="padding-top-bottom">
+                <a href="/events/{{event.id}}" class="btn btn-primary" role="button">RSVP</a>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+</div>
+
 
   <script src="//www.google-analytics.com/cx/api.js?experiment=60s2vjDaTn6ieKIdF0NZ6w"></script>
 

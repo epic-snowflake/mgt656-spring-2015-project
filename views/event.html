@@ -1,17 +1,16 @@
 {% extends "layout.html" %}
 
+{% block header %}
+  <h1 class="allEvents">All Events</h1>
+{% endblock %}
+
 {% block mainContent %}
+   <div class="center padding">
+    <a href="/events/new"><button type="button" class="btn btn-success btn-lg"> Create a new event </button></a>
+  </div>
   <div>
     {% include "fragments/events-list.html" %}
   </div>
-  <div>
-    <a href="/events/new">Create a new event</a>
-  </div>
+ 
 {% endblock %}
 
-{% block footer %}
-  <footer>
-    Look at me customize the footer. The time is now {{time}}.
-    <a href="/about">About us</a>.
-  </footer>
-{% endblock %}
