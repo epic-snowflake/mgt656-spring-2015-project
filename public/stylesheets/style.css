@@ -106,3 +106,14 @@ li {
   padding-bottom:10px;
   padding-top: 10px;
 }
+
+.index-background {
+  background-image: url("maxresdefault.jpg");
+  padding:100px;
+  margin-top: -2%;
+  margin-left:-20%;
+  margin-right:-20%;
+  margin-bottom: 1%;
+  background-size: cover;
+  
+}
