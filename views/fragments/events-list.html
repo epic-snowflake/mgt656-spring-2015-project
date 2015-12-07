@@ -4,7 +4,6 @@
   }
 </style>
 
-
 <div class="row">
     {% for event in events %}
       <li class = "event" id="event-{{event.id}}">
@@ -12,11 +11,7 @@
           <div class="thumbnail">
             <img src="{{event.image}}" style="height: 200px; overflow: hidden">
             <div class="caption">
-<<<<<<< HEAD
-              <h3><a href="/events/{{event.id}}" class="eventname">{{event.title}}  <span class="rsvp" class="btn btn-primary">RSVP</span></a></h3>
-=======
               <h3><a href="/events/{{event.id}}" class="eventname">{{event.title}}  <span class="btn btn-primary rsvp">RSVP</span></a></h3>
->>>>>>> 292bf2fd98f9db20bdde58fc0b3695dc6d57e0fa
               <p> <b>Date: </b><time datetime="{{event.date}}">{{event.date|prettyDate}}</time></p>
               <p>{{event.attending.length}} attending so far.</p>
             </div>
