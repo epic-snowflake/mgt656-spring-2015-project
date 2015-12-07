@@ -9,7 +9,7 @@
       <p><strong>Who: </strong></p>
       <ul id = "attendees">
         {% for person in event.attending %}
-        <li>{{person}}</li>
+        <li class="person">{{person}}</li>
         {% endfor %}
       </ul>
       <img id="image" src = "{{event.image}}">
@@ -38,7 +38,18 @@
     }
   ];
   
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  
   $(document).ready(function(){
+    $( ".person" ).each(function( index ) {
+      var tempval = $(this).html();
+      var tempval1 = tempval.split("@")[0];
+      var tempval2 = tempval1.split(".");
+      $(this).html(capitalizeFirstLetter(tempval2[0]) + " " + capitalizeFirstLetter(tempval2[1]));
+    });
+    
     // Ask Google Analytics which variation to show the user.
     var chosenVariation = cxApi.chooseVariation("vgqmc9HBQN6o1DgRD__GHw");
     // Execute the chosen view
