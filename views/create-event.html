@@ -4,9 +4,9 @@
 
 <!--handle proper available days for month. This does not yet allow for Feb 29th -->
 <script>
-  $( document ).ready(function() {
-    $("#month").change(function() {
-      var selectedclass = $("#month option:selected").attr('class');
+
+  function fixMonthOptions() {
+    var selectedclass = $("#month option:selected").attr('class');
       if (selectedclass == "31month") {
         $(".option29-31").show();
       }
@@ -14,8 +14,29 @@
         $(".option29-31").show();
         $(".option31").hide();
       }
-      else if (selectedclass == "febmonth") {
+      else if (selectedclass == "febmonth-no-leap") {
         $(".option29-31").hide();
+      }
+      else if (selectedclass == "febmonth-leap") {
+        $(".option29-31").show();
+        $(".option30-31").hide();
+      }
+  }
+
+  $( document ).ready(function() {
+    $("#month").change(function() {
+      fixMonthOptions();
+    })
+    //Allows for leap years
+    $("#year").change(function() {
+      var selectedyear = $("#year option:selected").html();
+      if (selectedyear == "2016") {
+        $(".febmonth-no-leap").addClass('febmonth-leap').removeClass('febmonth-no-leap');
+        fixMonthOptions();
+      }
+      else if (selectedyear == "2015") {
+        $(".febmonth-leap").addClass('febmonth-no-leap').removeClass('febmonth-leap');
+        fixMonthOptions();
       }
     })
   });
@@ -43,7 +64,7 @@
     <label for="month">Event date:</label>
     <select name="month" id="month">
       <option value="0" class="31month">January</option>
-      <option value="1" class="febmonth">February</option>
+      <option value="1" class="febmonth-no-leap">February</option>
       <option value="2" class="31month">March</option>
       <option value="3" class="30month">April</option>
       <option value="4" class="31month">May</option>
@@ -53,7 +74,7 @@
       <option value="8" class="30month">September</option>
       <option value="9" class="31month">October</option>
       <option value="10" class="30month">November</option>
-      <option value="11">December</option>
+      <option value="11" class="31month">December</option>
     </select>
     <label for="day"></label>
     <select name="day">
@@ -90,7 +111,7 @@
       <option value="31" class="option29-31 option30-31 option31">31</option>
     </select>
     <label for="year"></label>
-    <select name="year">
+    <select name="year" id="year">
       <option value="2015">2015</option>
       <option value="2016">2016</option>
     </select>
