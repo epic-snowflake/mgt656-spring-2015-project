@@ -2,6 +2,19 @@
 
 {% block mainContent %}
 
+<style>
+  #image {
+    float: right; 
+    margin-top: -100px;
+  }
+  footer {
+    margin-top: 200px;
+  }
+  form {
+    padding: 10px 0px 20px 0px;
+  }
+</style>
+
     <li class = "event" id="event-{{event.id}}">
       <h1 id="title">{{event.title}}</h1> 
       <p><strong>When: </strong><span id="date">{{event.date|prettyDate}}</span></p>
